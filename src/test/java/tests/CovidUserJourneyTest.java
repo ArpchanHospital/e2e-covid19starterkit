@@ -32,5 +32,11 @@ public class CovidUserJourneyTest extends BaseTestClass {
 
         getDashboardPage().gotoPrograms();
         LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "navigated to programs");
+
+        String patientId= getPatientSearchPage().selectPatient(firstName,lastName);
+        LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "get current patient Id");
+
+        getProgramEnrollmentPage().newProgramEnrollment();
+        LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "choose covid daily follow up form, enrolled and opened the covid 19 dashboard");
     }
 }
