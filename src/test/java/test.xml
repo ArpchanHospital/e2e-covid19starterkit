@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite">
+    <listeners>
+        <listener class-name="listener.ExtentReporterNG"/>
+    </listeners>
+    <test name="Covid-19 user end to end test">
+        <classes>
+            <class name="tests.CovidUserJourneyTest"/>
+        </classes>
+    </test>
+</suite>
