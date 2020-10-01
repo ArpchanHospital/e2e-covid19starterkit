@@ -13,5 +13,8 @@ public class CovidUserJourneyTest extends BaseTestClass {
 
         getDashboardPage().gotoRegistration();
         LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "clicked on registration");
+
+        getRegistrationPage().clickCreateNew();
+        LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "clicked on createNew");
     }
 }
