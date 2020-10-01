@@ -26,5 +26,11 @@ public class CovidUserJourneyTest extends BaseTestClass {
 
         getPatientDetailsPage().fillPatientDetails(firstName, lastName);
         LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "filled patient details and started emergency visit");
+
+        getVisitPage().gotoHome();
+        LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "clicked on home");
+
+        getDashboardPage().gotoPrograms();
+        LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "navigated to programs");
     }
 }
