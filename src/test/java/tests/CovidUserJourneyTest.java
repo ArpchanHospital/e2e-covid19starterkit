@@ -10,7 +10,7 @@ import java.util.Random;
 public class CovidUserJourneyTest extends BaseTestClass {
     Random random = new Random();
     char nextRandomChar = (char) (65 + (int) (random.nextFloat() * (90 - 65 + 1)));
-    public String firstName = "covid" + nextRandomChar;
+    public String firstName = "covidp" + nextRandomChar;
     public String lastName = "patient" + nextRandomChar;
 
     @Test
@@ -33,7 +33,7 @@ public class CovidUserJourneyTest extends BaseTestClass {
         getDashboardPage().gotoPrograms();
         LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "navigated to programs");
 
-        String patientId= getPatientSearchPage().selectPatient(firstName,lastName);
+        String patientId = getPatientSearchPage().selectPatient(firstName, lastName);
         LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "get current patient Id");
 
         getProgramEnrollmentPage().newProgramEnrollment();

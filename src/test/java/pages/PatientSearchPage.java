@@ -24,6 +24,9 @@ public class PatientSearchPage extends Wait {
     @FindBy(id = "patientIdentifier")
     private WebElement searchPatientInPrograms;
 
+    @FindBy(className = "patient-id")
+    private WebElement firstPatientID;
+
     public PatientSearchPage() {
         PageFactory.initElements(driver, this);
     }
@@ -39,11 +42,12 @@ public class PatientSearchPage extends Wait {
         searchPatient(firstName, lastname);
         for (int i = 0; i < patientNames.size(); i++) {
             if (patientNames.get(i).getText().contains(firstName)) {
+                waitUntilAllElementsVisible(firstPatientName);
                 Wait.explicitWait(ExpectedConditions.elementToBeClickable(patientNames.get(i)));
                 activePatients.get(i).click();
                 waitUntilElementInvisible(framework.PageFactory.getDashboardPage().refresh);
-                return patientIds.get(i).getText();
             }
+            return patientIds.get(i).getText();
         }
         return null;
     }
