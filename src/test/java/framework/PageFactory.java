@@ -11,6 +11,7 @@ public class PageFactory extends Wait {
     private static PatientSearchPage patientSearchPage;
     private static ProgramEnrollmentPage programEnrollmentPage;
     private static PatientDashboardPage patientDashboardPage;
+    private static PatientConsultationPage patientConsultationPage;
 
     public static LoginPage getLoginPage() {
         return loginPage;
@@ -43,6 +44,10 @@ public class PageFactory extends Wait {
         return patientDashboardPage;
     }
 
+    public static PatientConsultationPage getPatientConsultationPage() {
+        return patientConsultationPage;
+    }
+
     public static void instantiatePages() {
         loginPage = new LoginPage();
         dashboardPage = new DashboardPage();
@@ -52,5 +57,6 @@ public class PageFactory extends Wait {
         patientSearchPage = new PatientSearchPage();
         programEnrollmentPage = new ProgramEnrollmentPage();
         patientDashboardPage = new PatientDashboardPage();
+        patientConsultationPage = new PatientConsultationPage();
     }
 }

@@ -41,5 +41,14 @@ public class CovidUserJourneyTest extends BaseTestClass {
 
         getPatientDashboardPage().clickConsultation();
         LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "clicked on consultation");
+
+        getPatientConsultationPage().addNewObsForm();
+        LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "clicked on add new obs form and choose covid 19 follow up form");
+
+        getPatientConsultationPage().fillCovidFormDetails();
+        LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "filled covid form details");
+
+        getPatientConsultationPage().gotoPatientSearchPage();
+        LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "clicked on group icon");
     }
 }
