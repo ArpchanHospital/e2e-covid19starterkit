@@ -60,5 +60,11 @@ public class CovidUserJourneyTest extends BaseTestClass {
         getRegistrationPage().searchPatient(firstName + " " + lastName);
         getRegistrationPage().selectPatient(patientId);
         LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "searched and selected current patient");
+
+        getPatientDetailsPage().clickEnterVisitDetails();
+        LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "clicked on enter visit details");
+
+        getVisitPage().closeVisit();
+        LoggerClass.showLog(CovidUserJourneyTest.class, Level.INFO, "closed visit");
     }
 }
